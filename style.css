@@ -13,6 +13,9 @@
 --color-yellow:#fff7d1;
 --color-orange:#feb546;
 --color-black:#000000;
+--color-green:#3B9032;
+--color-dark-green: #144431;
+--color-light-green:#297858;
 
 
 /*Font size*/
@@ -28,11 +31,22 @@
 --weight-regular:400;
 
 /*Size*/
-
+--size-border-radius:4px;
 }
 /*Universaltags*/
+@font-face {
+    font-family: 'BMHANNAAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 *{
     box-sizing: border-box;
+}
+body{
+    font-family:'BMHANNAAir';
+    margin:0;
+    cursor: default;
 }
 
 /*Typography*/
@@ -60,5 +74,46 @@ p{
     font-weight: var(--weight-regular);
     color: var(--color-black);
     margin: 4px 0;
+}
+a{
+    text-decoration: none;
+    color: var(--color-white);
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
 
+/*Navbar*/
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-dark-green);
+    align-items: center;
+    color: var(--color-white);
+    padding: 16px;
+   
+}
+.navbar__menu{
+    display: flex;
+   
+}
+.navbar__logo{
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+}
+.navbar__menu__item{
+    padding: 8px 12px;
+    margin: 0 4px;
+    font-family:'Noto Sans JP';
+    cursor: pointer;
+    border-radius: var(--size-border-radius);
+}
+.navbar__menu__item.active{
+    border:1px solid var(--color-white);
+    
+}
+.navbar__menu__item:hover{
+    border-radius: var(--size-border-radius);
+    background-color: var(--color-light-green);
 }
