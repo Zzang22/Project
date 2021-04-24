@@ -197,11 +197,19 @@ button{
     font-family: 'ELAND_Choice_M';
     color: var(--color-grey);
     font-size: var(--font-micro);
+    margin-bottom: 16px;
+}
+#about span{
+    color: var(--color-pink);
+}
+#about >h1{
+    margin-bottom: 30px;
 }
 .about__majors{
     display: flex;
     justify-content:space-between;
     margin: 120px 0;
+    
 }
 .major__icon{
     width: 170px;
