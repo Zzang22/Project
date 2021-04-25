@@ -188,6 +188,9 @@ button{
 .section{
     padding: 50px;
     text-align: center;
+    margin: auto;
+}
+.section__container{
     max-width: 1200px;
     margin: auto;
 }
@@ -258,4 +261,66 @@ button{
     height: 50px;
     position: relative;
     left: 25px;
+}
+
+/*Skill*/
+#skills{
+    background-color: var(--color-yellow);
+   
+}
+.skillset{
+    display: flex;
+    background-color: var(--color-light-grey);
+    color: var(--color-light-white);
+    margin:20px 0;
+}
+
+
+.skillset__left{
+    flex-basis: 60%;
+    background-color: var(--color-dark-grey);
+    padding: 20px 40px;
+    
+}
+.skillset__right{
+    flex-basis: 40%;
+   
+}
+.skill{
+    margin-bottom: 28px;
+}
+.skill_description{
+    display: flex;
+    justify-content: space-between;
+}
+.skill_bar{
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-grey);
+}
+.skill__value{
+    height: 3px;
+    background-color:khaki;
+    /*width는 html 태그에서 정의되야한다. 
+    나중에 데이터를 추출해서 제이슨에서 관리하고
+    동적으로 받아온데이터를 html코드로 변환해서 
+    자동적으로 생성할 거기때문에 html에 적용되어 있어야 한다. 
+    */
+}
+.tools{
+    background-color: var(--color-grey);
+    padding: 40px;
+    
+}
+.tools__list li{
+    padding: 8px; 
+}
+.skillset__title{
+    margin-top: 0;
+    margin-bottom: 16px;
+    color:var(--color-white);
+    
+}
+.etc{
+    padding: 20px;
 }
