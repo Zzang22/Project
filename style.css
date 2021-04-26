@@ -107,6 +107,7 @@ li{
     list-style: none;
 }
 button{
+    /*기본 속성 없애기. border, outline없애기*/
     background-color: transparent;
     cursor: pointer;
     border: none;
@@ -146,16 +147,26 @@ button{
     border-radius: var(--size-border-radius);
     background-color:mediumseagreen;
 }
+
+.navbar__toggle-btn{
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-yellow);
+    display: none;
+}
 /*Home*/
 #home{
     background: url('images/2-1back.png') center/cover no-repeat ;
     padding:40px;
+    text-align: center;
 }
 .home__avatar{
     width: 180px;
     height:180px;
     position: relative;
-    left: 300px;
+    left: -300px;
     top: 80px;
     border: 2px solid gainsboro;
     border-radius: 50%;
@@ -163,20 +174,26 @@ button{
 }
 .home__title{
     position: relative;
-    left: 600px;
-    top:-120px;
+/*    left: 600px;*/
+    top:-50px;
     color: var(--color-light-white);
+    font-size: var(--font-regular);
 }
 .home__description{
+    
     position: relative;
-    left: 600px;
-    top: -120px;
+    left: -40px;
+    top: -50px;
+    
+    font-size: var(--font-small);
     color: var(--color-dark-white);
 }
 .home__contact{
     position: relative;
+    /*
     left: 580px;
     top: -120px;
+    */
     font-weight: var(--weight-bold);
     font-size: var(--font-regular);
     margin: 24px;
@@ -452,4 +469,46 @@ button{
     transform: scale(1.1);
     color:var(--color-white);
     
+}
+
+/*For below 768px screen width
+차이점만 보여주고 안 보여 주는 그런아이들만 media query
+에 넣어주자*/
+
+@media screen and (max-width:768px) {
+    .navbar__toggle-btn{
+        display: block;
+    }
+    #navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar__menu{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+    .navbar__menu__item.active{
+        border: none;
+    }
+    .about__majors{
+        flex-direction: column;
+    }
+    .major{
+        margin-bottom: 38px;
+    }
+    .skillset{
+        flex-direction: column;
+    }
+    .project{
+        flex-grow: 1;
+    }
+    /* .testimonial__avatar{
+        width: 80px;
+        height: 80px;
+    */
+    #home{
+        text-align: center;
+    }
 }
