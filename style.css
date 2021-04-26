@@ -319,8 +319,100 @@ button{
     margin-top: 0;
     margin-bottom: 16px;
     color:var(--color-white);
-    
 }
 .etc{
     padding: 20px;
+}
+/*Work*/
+.work__categories{
+    margin: 40px;
+}
+.category__btn{
+    border:1px solid var(--color-dark-white);
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-micro);
+    padding: 8px 48px;
+}
+.category__btn.active,
+.category__btn:hover {
+    background-color:lightslategrey;
+    color: var(--color-light-white);
+    border: none;
+    font-weight: var(--weight-bold);
+}
+.category__btn.active .category__count,
+.category__btn:hover .category__count{
+    opacity: 1;
+    top:0;
+}
+.category__count{
+    border-radius: 50%;
+    background-color:#feb546;
+    
+    font-size: var(--font-micro);
+    color: var(--color-white);
+    width: 24px;
+    height: 24px; 
+    /*span이라 텍스트를 감싸고있게 동그라미 모양이 제대로 나오지 않아
+    display: inline-block으로 바꿔 줘야 한다. */
+    display: inline-block;
+    line-height: 24px;
+    position: relative;
+    top:-20px;
+    left: 4px;
+    opacity: 0;
+    transition: all 300ms ease-in;
+}
+.work__projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.project{
+    position: relative;
+    width: 280px;
+    height: 250px;
+    margin: 2px;
+    background-color: var(--color-light-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project__img{
+    max-width: 100%;
+    max-height: 100%;
+/*image크기가 다를때, 담겨있는 통 안에 맞추도록 해줌*/
+}
+.project__description{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform:translateY(10px);
+    transition: all 300ms ease-in;
+}
+.project:hover .project__description{
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+.project__description h3{
+    color:var(--color-white);
+}
+.project__description h3:after {
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    width: 100px;
+    height: 1px;
+    margin-left: -50px;
+    margin-top: 8px;
+    background-color: var(--color-dark-white);
 }
