@@ -22,7 +22,14 @@ navbarMenu.addEventListener('click', (event) =>{
     if(link ==null){
         return; 
     }
+    navbarMenu.classList.remove('open'); // 스크롤링 될때는 open 버튼 없애주기!
     scrollIntoView(link);
+});
+
+//Navbar toggle button for small screen 
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', ()=>{
+    navbarMenu.classList.toggle('open');
 });
 
 //contact me 
@@ -31,15 +38,14 @@ btn_contact.addEventListener('click', () =>{
    scrollIntoView('#contact');
 });
 
-// navbar buttotn click 했을때 border 나타내기
-
-
 //Make home slowly fadeto transparent as the window scrolls down
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () =>{
    home.style.opacity =1 - window.scrollY / homeHeight;
 });
+
+
 
 //Show "arrow up" button when scrolling down
 document.addEventListener('scroll', () =>{
