@@ -116,12 +116,21 @@ button{
 
 /*Navbar*/
 #navbar {
+    position:fixed;
     display: flex;
+    /*position을 fixed로하면서 부모 위로 나왔기 때문에 
+    width가 100%가 아니다. 자동적으로 책정되었다. */
+    width: 100%;
     justify-content: space-between;
-    background-color: var(--color-dark-green);
+    background-color: transparent;
     align-items: center;
     padding: 16px;
-   
+    transition: all 300ms ease-in-out;
+}
+#navbar.navbar--dark{
+    background-color:var(--color-dark-green);
+    padding: 8px;
+
 }
 .navbar__menu{
     display: flex;
@@ -161,6 +170,7 @@ button{
     background: url('images/2-1back.png') center/cover no-repeat ;
     padding:40px;
     text-align: center;
+    padding-top: 120px;
 }
 .home__avatar{
     width: 180px;
@@ -184,7 +194,6 @@ button{
     position: relative;
     left: -40px;
     top: -50px;
-    
     font-size: var(--font-small);
     color: var(--color-dark-white);
 }
