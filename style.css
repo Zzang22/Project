@@ -483,6 +483,22 @@ button{
     
 }
 
+/*Scroll button*/
+.arrow-up {
+    position: fixed;
+    bottom:50px;
+    right: 40px;
+    font-size: 70px;
+    color: var(--color-light-orange);   
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+    pointer-events: none; /*click 안되게 */
+}
+.arrow-up.visible{
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /*For below 768px screen width
 차이점만 보여주고 안 보여 주는 그런아이들만 media query
 에 넣어주자*/
