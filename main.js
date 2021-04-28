@@ -31,6 +31,8 @@ btn_contact.addEventListener('click', () =>{
    scrollIntoView('#contact');
 });
 
+// navbar buttotn click 했을때 border 나타내기
+
 
 //Make home slowly fadeto transparent as the window scrolls down
 const home = document.querySelector('.home__container');
@@ -40,7 +42,6 @@ document.addEventListener('scroll', () =>{
 });
 
 //Show "arrow up" button when scrolling down
-
 document.addEventListener('scroll', () =>{
     const arrowUp = document.querySelector('.arrow-up');
     if(window.scrollY > homeHeight /2){
@@ -69,6 +70,23 @@ workBtnContainer.addEventListener('click', (e)=>{
      *  project = projects[i]
      * }
      */
+
+    //remove selection from previous item and select the new one 
+    const active = document.querySelector('.category__btn.selected');
+   /* active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    e.target.classList.add('selected');
+    => 이게 지금 안됌 ㅜㅜ span을 누르면 .selected 다 사라짐*/
+    if (active) {
+        active.classList.remove("selected");
+    }
+    let target;
+    if (e.target.nodeName === "BUTTON"){
+        target = e.target;
+    }else {
+        target = e.target.parentNode;
+    }
+    target.classList.add("selected");
     projectContainer.classList.add('anim-out'); // 필터링되기 전에 애니메이션을 실행해주고
    setTimeout(()=>{
         //필터링 해준다. 
@@ -82,6 +100,9 @@ workBtnContainer.addEventListener('click', (e)=>{
        projectContainer.classList.remove('anim-out');
    }, 300); // 3초 뒤에 class remove
 });
+
+
+
 
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);

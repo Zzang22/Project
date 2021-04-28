@@ -148,14 +148,13 @@ button{
     font-family:'Noto Sans JP';
     cursor: pointer;
     border-radius: var(--size-border-radius);
+    border:1px solid transparent; /*back-ground만 지정을 안해주고, border를 만들어주면 text가 움직이지 않는다. */
 }
-.navbar__menu__item.active{
-    border:1px solid var(--color-yellow);
-    
-}
+
 .navbar__menu__item:hover{
     border-radius: var(--size-border-radius);
     background-color:mediumseagreen;
+    border:1px solid var(--color-yellow);
 }
 
 .navbar__toggle-btn{
@@ -370,14 +369,14 @@ button{
     font-size: var(--font-micro);
     padding: 8px 48px;
 }
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
     background-color:lightslategrey;
     color: var(--color-light-white);
     border: none;
     font-weight: var(--weight-bold);
 }
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count{
     opacity: 1;
     top:0;
