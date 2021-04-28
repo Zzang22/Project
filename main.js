@@ -45,16 +45,43 @@ document.addEventListener('scroll', () =>{
     const arrowUp = document.querySelector('.arrow-up');
     if(window.scrollY > homeHeight /2){
         arrowUp.classList.add('visible');
-        arrowUp.addEventListener('click', ()=>{
-            scrollIntoView('#home');
-        });
+        
     } else{
         arrowUp.classList.remove('visible');
     }
-   
+    arrowUp.addEventListener('click', ()=>{
+        scrollIntoView('#home');
+    });
 });
 
-
+//Projects
+const workBtnContainer= document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e)=>{
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+   if(filter== null){
+       return;
+   }
+   //for(let project of projects){}
+    /**let project;
+     * for(let i =0; i <projects.length; i++){
+     *  project = projects[i]
+     * }
+     */
+    projectContainer.classList.add('anim-out'); // 필터링되기 전에 애니메이션을 실행해주고
+   setTimeout(()=>{
+        //필터링 해준다. 
+        projects.forEach((project) =>{
+            if(filter === '*' || filter === project.dataset.type){
+                project.classList.remove('invisible');
+            }else{
+                project.classList.add('invisible');
+            }
+       });
+       projectContainer.classList.remove('anim-out');
+   }, 300); // 3초 뒤에 class remove
+});
 
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
